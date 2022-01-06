@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="signup">
+        <div class="signup-form">
+            <h1>Registrate</h1> <br> <br>
+            <form autocomplete="off" [formGroup]="form" (ngSubmit)="submitForm()">
+                <mat-form-field appearance="fill" class="signup-form__email">
+                    <mat-label>Email</mat-label>
+                    <input 
+                    type="text"
+                    name="email"
+                    formControlName="email"
+                    matInput>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill" class="signup-form__password">
+                    <mat-label>Password</mat-label>
+                    <input 
+                    type="password" 
+                    name="password"
+                    formControlName="password"
+                    matInput>
+                </mat-form-field>
+
+                <button 
+                type="submit" 
+                mat-raised-button 
+                class="sign-form__submit">
+                    Signup
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

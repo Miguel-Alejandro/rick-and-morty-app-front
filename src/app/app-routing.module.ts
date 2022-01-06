@@ -11,13 +11,18 @@ const routes: Routes = [
   {
     path:'home',
     loadChildren: () => import('./pages/home/home.module').
-    then( m => m.FeatureModule )
+    then( m => m.FeatureModule ),
   },
 
   {
     path:'dashboard',
     loadChildren: () => 
-      import('./pages/dashboard/dashboard.module').then( m => m.DashboardModule )
+      import('./pages/dashboard/dashboard.module').then( m => m.DashboardModule ),
+  },
+
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupModule ),
   }
 ];
 

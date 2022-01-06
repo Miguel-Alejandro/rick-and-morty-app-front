@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "rick-morty-auth-1fed8": {
+      "hosting": {
+        "rick-and-morty": [
+          "rick-morty-auth-1fed8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "rick-morty-auth-1fed8"
+  }
+}
