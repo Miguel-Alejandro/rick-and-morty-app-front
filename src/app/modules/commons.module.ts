@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 @NgModule({
     declarations: [
         FooterComponent,
@@ -16,6 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
     imports: [
         CommonModule,
         HttpClientModule,
+        RouterModule,
         ReactiveFormsModule,
         MatFormFieldModule,
         MatInputModule,
@@ -30,6 +32,7 @@ import {MatButtonModule} from '@angular/material/button';
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
+        RouterModule
     ],
     providers: [],
 })

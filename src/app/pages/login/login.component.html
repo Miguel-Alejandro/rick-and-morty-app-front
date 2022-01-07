@@ -1,0 +1,57 @@
+<div class="content">
+    <div class="login">
+        <div class="login-form">
+            <div class="login-form__image">
+                <img src="../../../assets/img/Rick_Sanchez.png">
+                <img class="login-form__image-portal" src="https://mystickermania.com/cdn/stickers/rick-and-morty/sticker_2060-512x512.png">
+            </div>
+
+            <div class="login-form__inputs">
+                <h1>Login</h1>
+                
+                <form autocomplete="off" [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="login-form__email">
+                        <input 
+                        class="input is-rounded" 
+                        type="text"
+                        name="email"
+                        formControlName="email"
+                        placeholder="Email">
+                    </div>
+    
+                    <div class="login-form__password">
+                        <input 
+                        class="input is-rounded" 
+                        type="password"
+                        name="password"
+                        formControlName="password"
+                        placeholder="Password">
+                    </div>
+
+                    <br>
+                    <div class="login-form__submit-button">
+                        <button 
+                        type="submit" 
+                        mat-raised-button 
+                        class="login-form__submit">
+                            Login
+                        </button>
+
+                        <button 
+                        mat-raised-button 
+                        color="warn"
+                        class="login-form__google"
+                        (click)="loginWithGoogle()">
+                        <img src="../../../assets/svg/logo-google.svg" class="logo-google">
+                        </button>
+
+                        <div class="login-form__signup-options">
+                            <p>¿Notienes cuenta?</p>
+                            <small [routerLink]="['/signup']">Registrate</small>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

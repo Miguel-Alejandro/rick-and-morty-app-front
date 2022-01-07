@@ -18,4 +18,8 @@ export class RedirectsService {
   public goToDashboard(): void {
     this.router.navigate(['/dashboard']);
   }
+
+  public goToLogin(): void {
+    this.router.navigate(['/login']);
+  }
 }
