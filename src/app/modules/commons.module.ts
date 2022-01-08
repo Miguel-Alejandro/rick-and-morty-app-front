@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
     exports: [
         FooterComponent,
         HeaderComponent,
-
+        HttpClientModule,
         ReactiveFormsModule,
         MatFormFieldModule,
         MatInputModule,

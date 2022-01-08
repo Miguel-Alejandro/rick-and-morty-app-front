@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
+import { Observable } from 'rxjs';
 import { RedirectsService } from '../services/redirects.service';
+import { User } from '../models/User';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor( private fireAuth: AngularFireAuth, private redirect:RedirectsService ) { }
+  public dataLogged:Observable<User>;
+  constructor( private fireAuth: AngularFireAuth, private redirect:RedirectsService ) { this.dataLogged = this.userDataLogged() }
 
   public async createAcount( email:string, password:string ): Promise<void> {
     try{
@@ -37,9 +40,18 @@ export class AuthService {
     try{
       await this.fireAuth.signInWithPopup( new firebase.auth.GoogleAuthProvider() )
       await this.redirect.goToDashboard()
+      await this.userDataLogged().subscribe( res => {
+        console.log(res);
+        
+      })
     }catch(err){
       console.log(err);
     }
+  }
+
+
+  public userDataLogged(): Observable<User | any>{
+    return this.fireAuth.authState;
   }
 
   public async logout(): Promise<void>{

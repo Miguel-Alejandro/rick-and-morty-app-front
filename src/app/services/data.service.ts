@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Builder } from 'builder-pattern';
+import { Character, Location, Origin } from '../models/Character';
 
 @Injectable({
   providedIn: 'root'

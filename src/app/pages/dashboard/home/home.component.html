@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="character container" >
+        <div class="character__card blur--card" *ngFor="let data of dataCharacter">
+            <div class="character__card-img">
+                <img [src]="data.image" alt="">
+            </div>
+
+            <div class="character__card-title">
+                <h2>{{data.name}}</h2>
+            </div>
+        </div>
+        
+    </div>
+</div>
