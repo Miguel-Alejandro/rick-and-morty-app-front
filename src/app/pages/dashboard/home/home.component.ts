@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
 
   public setCharacter(){
     this.dataSrv.getCharacter().subscribe( (res) => {
+      console.log(res);
+      
       this.dataCharacter = res.results
       console.log(res.results);
       

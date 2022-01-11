@@ -1,12 +1,32 @@
 <div class="content">
+
+    <div class="search container">
+        <form>
+            <input class="input is-rounded" type="text" placeholder="Buscar">
+        </form>
+    </div>
+
     <div class="character container" >
-        <div class="character__card blur--card" *ngFor="let data of dataCharacter">
+        <div class="character__card has-background-success" *ngFor="let data of dataCharacter">
+            
             <div class="character__card-img">
                 <img [src]="data.image" alt="">
             </div>
 
-            <div class="character__card-title">
-                <h2>{{data.name}}</h2>
+            <div class="character__card-content">
+                <h1>{{data.name}}</h1>
+                <p> <b>Genero:</b> {{data.gender}} </p>
+                <p> <b>Ubicacion:</b> {{data.location.name}} </p>
+                <p> <b>Origen: </b> {{data.origin.name}} </p>
+                <p> <b>Especie: </b> {{data.species}} </p>
+                
+                <p class="alive has-background-info" *ngIf="data.status == 'Alive' "> 
+                    <b>Estatus:</b> {{data.status}} 
+                </p>
+
+                <p class="dead has-background-danger" *ngIf="data.status == 'Dead' "> 
+                    <b>Estatus:</b> {{data.status}} 
+                </p>
             </div>
         </div>
         
